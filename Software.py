@@ -1,6 +1,7 @@
 import tkinter as tk
 from pydes import des
 
+
 class Caesar:
     def __init__(self):
         self.cipher = ""
@@ -224,6 +225,7 @@ class PlayFair:
         return("".join(message))  
 
 def CaesarED(num,mess,key):
+    status = 1
     instance = Caesar()
     if num == 1:
         cipher = instance.encrypt(mess,key)
@@ -237,6 +239,27 @@ def CaesarED(num,mess,key):
         dResult.pack(side='top')
 
 def Choice_Caesar():
+    
+    for widget in Selected.winfo_children():
+        widget.destroy()
+
+    for widget in E_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in D_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in E_Form.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Form.winfo_children():
+        widget.destroy()
+
+    for widget in E_Result.winfo_children():
+        widget.destroy()
+
+    for widget in D_Result.winfo_children():
+        widget.destroy()
 
     status = tk.Label(Selected, text='The Selected Algorithm is : Caesar Cipher')
     status.pack(side='top')
@@ -286,6 +309,28 @@ def PlayFairED(num,mess,key):
         dResult.pack(side='top')
 
 def Choice_PlayFair():
+
+    for widget in Selected.winfo_children():
+        widget.destroy()
+
+    for widget in E_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in D_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in E_Form.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Form.winfo_children():
+        widget.destroy()
+
+    for widget in E_Result.winfo_children():
+        widget.destroy()
+
+    for widget in D_Result.winfo_children():
+        widget.destroy()
+
     status = tk.Label(Selected, text='The Selected Algorithm is : PlayFair Cipher')
     status.pack(side='top')
     
@@ -334,6 +379,28 @@ def DES_ED(num,key,mess):
         dResult.pack(side='top')
 
 def Choice_DES():
+
+    for widget in Selected.winfo_children():
+        widget.destroy()
+
+    for widget in E_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in D_Name_Fr.winfo_children():
+        widget.destroy()
+
+    for widget in E_Form.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Form.winfo_children():
+        widget.destroy()
+
+    for widget in E_Result.winfo_children():
+        widget.destroy()
+
+    for widget in D_Result.winfo_children():
+        widget.destroy()
+
     status = tk.Label(Selected, text='The Selected Algorithm is : Data Encryption Standard')
     status.pack(side='top')
     
@@ -374,6 +441,7 @@ gui.title("Information Security Software")
 gui.geometry("1400x660")
 
 #creating all frames
+
 Center = tk.Frame(gui, bg="white")
 Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)
 
