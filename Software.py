@@ -1,4 +1,5 @@
 import tkinter as tk
+from pydes import des
 
 class Caesar:
     def __init__(self):
@@ -319,6 +320,54 @@ def Choice_PlayFair():
     D_Submit = tk.Button(D_Form,text='Submit',padx=50,pady=7,command= lambda: PlayFairED(2,D_InpMessage.get(),D_InpKey.get()))
     D_Submit.grid(columnspan=3,sticky='E')
 
+def DES_ED(num,key,mess):
+    d = des()
+    if num == 1:
+        cipher = d.encrypt(key,mess,padding=True)
+        cipher = 'The Calculated Cipher is : ' + cipher
+        Result = tk.Label(E_Result,text=cipher)
+        Result.pack(side='top')
+    if num == 2:
+        message = d.decrypt(key,mess,padding=True)
+        message = 'The Calculated Message is : '+ message
+        dResult = tk.Label(D_Result,text=message)
+        dResult.pack(side='top')
+
+def Choice_DES():
+    status = tk.Label(Selected, text='The Selected Algorithm is : Data Encryption Standard')
+    status.pack(side='top')
+    
+    Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (Data Encryption Standard)')
+    Encryption_Head.pack(side='left')
+
+    Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Data Encryption Standard)')
+    Decription_Head.pack(side='left')
+
+    E_Key = tk.Label(E_Form, text='Enter the key(8 letter keys)')
+    E_Mess = tk.Label(E_Form, text='Enter the Message')
+    Inp_Key = tk.Entry(E_Form)
+    Inp_Message = tk.Entry(E_Form)
+
+    E_Key.grid(row=0,sticky='E')
+    E_Mess.grid(row=1,sticky='E')
+    Inp_Key.grid(row=0,column=1)
+    Inp_Message.grid(row=1,column=1)
+
+    D_Key = tk.Label(D_Form, text='Enter the key(8 letter keys)')
+    D_Mess = tk.Label(D_Form, text='Enter the Cipher')
+    D_InpKey = tk.Entry(D_Form)
+    D_InpMessage = tk.Entry(D_Form)
+
+    D_Key.grid(row=0,sticky='E')
+    D_Mess.grid(row=1,sticky='E')
+    D_InpKey.grid(row=0,column=1)
+    D_InpMessage.grid(row=1,column=1)
+
+    E_Submit = tk.Button(E_Form,text='Submit',padx=50,pady=7,command= lambda: DES_ED(1,Inp_Key.get(),Inp_Message.get()))
+    E_Submit.grid(columnspan=3,sticky='E')
+    D_Submit = tk.Button(D_Form,text='Submit',padx=50,pady=7,command= lambda: DES_ED(2,D_InpKey.get(),D_InpMessage.get()))
+    D_Submit.grid(columnspan=3,sticky='E')
+
 gui = tk.Tk()
 gui.iconbitmap(r'favicon.ico')
 gui.title("Information Security Software")
@@ -356,7 +405,7 @@ Caesarb.place(relx=0.01, rely=0.01)
 PFair = tk.Button(Center,text="Playfair Cipher", bd=5, padx=120, pady=10, command=Choice_PlayFair)
 PFair.place(relx=0.37, rely=0.01)
 
-DES = tk.Button(Center,text="Data Encription Standard", bd=5, padx=90, pady=10)
+DES = tk.Button(Center,text="Data Encription Standard", bd=5, padx=90, pady=10, command=Choice_DES)
 DES.place(relx=0.725, rely=0.01)
 
 gui.mainloop()
