@@ -225,7 +225,6 @@ class PlayFair:
         return("".join(message))  
 
 def CaesarED(num,mess,key):
-    status = 1
     instance = Caesar()
     if num == 1:
         cipher = instance.encrypt(mess,key)
@@ -249,15 +248,39 @@ def Choice_Caesar():
     for widget in D_Name_Fr.winfo_children():
         widget.destroy()
 
-    for widget in E_Form.winfo_children():
+    for widget in E_K_Disp.winfo_children():
         widget.destroy()
     
-    for widget in D_Form.winfo_children():
+    for widget in E_K_Inp.winfo_children():
         widget.destroy()
 
+    for widget in D_K_Disp.winfo_children():
+        widget.destroy()
+
+    for widget in D_K_Inp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Disp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in D_M_Disp.winfo_children():
+        widget.destroy()
+        
+    for widget in D_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in E_Submit_Fr.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Submit_Fr.winfo_children():
+        widget.destroy()
+    
     for widget in E_Result.winfo_children():
         widget.destroy()
-
+    
     for widget in D_Result.winfo_children():
         widget.destroy()
 
@@ -265,35 +288,35 @@ def Choice_Caesar():
     status.pack(side='top')
     
     Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (Caesar Cipher)')
-    Encryption_Head.pack(side='left')
+    Encryption_Head.pack(side='top')
 
-    Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Caesar Cipher)')
-    Decription_Head.pack(side='left')
+    Decription_Head = tk.Label(D_Name_Fr,text='Decrypt Message (Caesar Cipher)')
+    Decription_Head.pack(side='top')
 
-    E_Key = tk.Label(E_Form, text='Enter the key/displacement')
-    E_Mess = tk.Label(E_Form, text='Enter the Message')
-    Inp_Key = tk.Entry(E_Form)
-    Inp_Message = tk.Entry(E_Form)
+    E_Key = tk.Label(E_K_Disp, text='Enter the key/displacement')
+    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
+    Inp_Key = tk.Entry(E_K_Inp)
+    Inp_Message = tk.Entry(E_M_Inp)
 
-    E_Key.grid(row=0,sticky='E')
-    E_Mess.grid(row=1,sticky='E')
-    Inp_Key.grid(row=0,column=1)
-    Inp_Message.grid(row=1,column=1)
+    E_Key.pack(side='right')
+    E_Mess.pack(side='right')
+    Inp_Key.pack(side='left')
+    Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_Form, text='Enter the key/displacement')
-    D_Mess = tk.Label(D_Form, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_Form)
-    D_InpMessage = tk.Entry(D_Form)
+    D_Key = tk.Label(D_K_Disp, text='Enter the key/displacement')
+    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
+    D_InpKey = tk.Entry(D_K_Inp)
+    D_InpMessage = tk.Entry(D_M_Inp)
 
-    D_Key.grid(row=0,sticky='E')
-    D_Mess.grid(row=1,sticky='E')
-    D_InpKey.grid(row=0,column=1)
-    D_InpMessage.grid(row=1,column=1)
+    D_Key.pack(side='right')
+    D_Mess.pack(side='right')
+    D_InpKey.pack(side='left')
+    D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Form,text='Submit',padx=50,pady=7,command= lambda: CaesarED(1,Inp_Message.get(),int(Inp_Key.get())))
-    E_Submit.grid(columnspan=3,sticky='E')
-    D_Submit = tk.Button(D_Form,text='Submit',padx=50,pady=7,command= lambda: CaesarED(2,D_InpMessage.get(),int(D_InpKey.get())))
-    D_Submit.grid(columnspan=3,sticky='E')
+    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: CaesarED(1,Inp_Message.get(),int(Inp_Key.get())))
+    E_Submit.pack(side='top')
+    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: CaesarED(2,D_InpMessage.get(),int(D_InpKey.get())))
+    D_Submit.pack(side='top')
 
 def PlayFairED(num,mess,key):
     pf = PlayFair(key)
@@ -319,15 +342,39 @@ def Choice_PlayFair():
     for widget in D_Name_Fr.winfo_children():
         widget.destroy()
 
-    for widget in E_Form.winfo_children():
+    for widget in E_K_Disp.winfo_children():
         widget.destroy()
     
-    for widget in D_Form.winfo_children():
+    for widget in E_K_Inp.winfo_children():
         widget.destroy()
 
+    for widget in D_K_Disp.winfo_children():
+        widget.destroy()
+
+    for widget in D_K_Inp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Disp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in D_M_Disp.winfo_children():
+        widget.destroy()
+        
+    for widget in D_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in E_Submit_Fr.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Submit_Fr.winfo_children():
+        widget.destroy()
+    
     for widget in E_Result.winfo_children():
         widget.destroy()
-
+    
     for widget in D_Result.winfo_children():
         widget.destroy()
 
@@ -340,30 +387,30 @@ def Choice_PlayFair():
     Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Playfair Cipher)')
     Decription_Head.pack(side='left')
 
-    E_Key = tk.Label(E_Form, text='Enter the key')
-    E_Mess = tk.Label(E_Form, text='Enter the Message')
-    Inp_Key = tk.Entry(E_Form)
-    Inp_Message = tk.Entry(E_Form)
+    E_Key = tk.Label(E_K_Disp, text='Enter the key')
+    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
+    Inp_Key = tk.Entry(E_K_Inp)
+    Inp_Message = tk.Entry(E_M_Inp)
 
-    E_Key.grid(row=0,sticky='E')
-    E_Mess.grid(row=1,sticky='E')
-    Inp_Key.grid(row=0,column=1)
-    Inp_Message.grid(row=1,column=1)
+    E_Key.pack(side='right')
+    E_Mess.pack(side='right')
+    Inp_Key.pack(side='left')
+    Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_Form, text='Enter the key')
-    D_Mess = tk.Label(D_Form, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_Form)
-    D_InpMessage = tk.Entry(D_Form)
+    D_Key = tk.Label(D_K_Disp, text='Enter the key')
+    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
+    D_InpKey = tk.Entry(D_K_Inp)
+    D_InpMessage = tk.Entry(D_M_Inp)
 
-    D_Key.grid(row=0,sticky='E')
-    D_Mess.grid(row=1,sticky='E')
-    D_InpKey.grid(row=0,column=1)
-    D_InpMessage.grid(row=1,column=1)
+    D_Key.pack(side='right')
+    D_Mess.pack(side='right')
+    D_InpKey.pack(side='left')
+    D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Form,text='Submit',padx=50,pady=7,command= lambda: PlayFairED(1,Inp_Message.get(),Inp_Key.get()))
-    E_Submit.grid(columnspan=3,sticky='E')
-    D_Submit = tk.Button(D_Form,text='Submit',padx=50,pady=7,command= lambda: PlayFairED(2,D_InpMessage.get(),D_InpKey.get()))
-    D_Submit.grid(columnspan=3,sticky='E')
+    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: PlayFairED(1,Inp_Message.get(),Inp_Key.get()))
+    E_Submit.pack(side='top')
+    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: PlayFairED(2,D_InpMessage.get(),D_InpKey.get()))
+    D_Submit.pack(side='top')
 
 def DES_ED(num,key,mess):
     d = des()
@@ -389,15 +436,39 @@ def Choice_DES():
     for widget in D_Name_Fr.winfo_children():
         widget.destroy()
 
-    for widget in E_Form.winfo_children():
+    for widget in E_K_Disp.winfo_children():
         widget.destroy()
     
-    for widget in D_Form.winfo_children():
+    for widget in E_K_Inp.winfo_children():
         widget.destroy()
 
+    for widget in D_K_Disp.winfo_children():
+        widget.destroy()
+
+    for widget in D_K_Inp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Disp.winfo_children():
+        widget.destroy()
+    
+    for widget in E_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in D_M_Disp.winfo_children():
+        widget.destroy()
+        
+    for widget in D_M_Inp.winfo_children():
+        widget.destroy()
+
+    for widget in E_Submit_Fr.winfo_children():
+        widget.destroy()
+    
+    for widget in D_Submit_Fr.winfo_children():
+        widget.destroy()
+    
     for widget in E_Result.winfo_children():
         widget.destroy()
-
+    
     for widget in D_Result.winfo_children():
         widget.destroy()
 
@@ -410,30 +481,30 @@ def Choice_DES():
     Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Data Encryption Standard)')
     Decription_Head.pack(side='left')
 
-    E_Key = tk.Label(E_Form, text='Enter the key(8 letter keys)')
-    E_Mess = tk.Label(E_Form, text='Enter the Message')
-    Inp_Key = tk.Entry(E_Form)
-    Inp_Message = tk.Entry(E_Form)
+    E_Key = tk.Label(E_K_Disp, text='Enter the key(8 letter keys)')
+    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
+    Inp_Key = tk.Entry(E_K_Inp)
+    Inp_Message = tk.Entry(E_M_Inp)
 
-    E_Key.grid(row=0,sticky='E')
-    E_Mess.grid(row=1,sticky='E')
-    Inp_Key.grid(row=0,column=1)
-    Inp_Message.grid(row=1,column=1)
+    E_Key.pack(side='right')
+    E_Mess.pack(side='right')
+    Inp_Key.pack(side='left')
+    Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_Form, text='Enter the key(8 letter keys)')
-    D_Mess = tk.Label(D_Form, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_Form)
-    D_InpMessage = tk.Entry(D_Form)
+    D_Key = tk.Label(D_K_Disp, text='Enter the key(8 letter keys)')
+    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
+    D_InpKey = tk.Entry(D_K_Inp)
+    D_InpMessage = tk.Entry(D_M_Inp)
 
-    D_Key.grid(row=0,sticky='E')
-    D_Mess.grid(row=1,sticky='E')
-    D_InpKey.grid(row=0,column=1)
-    D_InpMessage.grid(row=1,column=1)
+    D_Key.pack(side='right')
+    D_Mess.pack(side='right')
+    D_InpKey.pack(side='left')
+    D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Form,text='Submit',padx=50,pady=7,command= lambda: DES_ED(1,Inp_Key.get(),Inp_Message.get()))
-    E_Submit.grid(columnspan=3,sticky='E')
-    D_Submit = tk.Button(D_Form,text='Submit',padx=50,pady=7,command= lambda: DES_ED(2,D_InpKey.get(),D_InpMessage.get()))
-    D_Submit.grid(columnspan=3,sticky='E')
+    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: DES_ED(1,Inp_Key.get(),Inp_Message.get()))
+    E_Submit.pack(side='top')
+    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: DES_ED(2,D_InpKey.get(),D_InpMessage.get()))
+    D_Submit.pack(side='top')
 
 gui = tk.Tk()
 gui.iconbitmap(r'favicon.ico')
@@ -445,35 +516,58 @@ gui.geometry("1400x660")
 Center = tk.Frame(gui, bg="white")
 Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)
 
-E_Name_Fr = tk.Frame(Center, bg="pink")     
-E_Name_Fr.place(relx=0.1,rely=0.3,relwidth=0.3,relheight=0.08)
-
-D_Name_Fr = tk.Frame(Center, bg="pink")
-D_Name_Fr.place(relx=0.61,rely=0.3,relwidth=0.3,relheight=0.08)
-
 Selected = tk.Frame(Center, bg="pink")
 Selected.place(relx=0.352,rely=0.14,relwidth=0.3,relheight=0.08)
 
-E_Form = tk.Frame(Center, bg='pink')
-E_Form.place(relx=0.1,rely=0.4,relwidth=0.35,relheight=0.2)
+E_Name_Fr = tk.Frame(Center, bg="pink")     
+E_Name_Fr.place(relx=0.1,rely=0.3,relwidth=0.35,relheight=0.08)
 
-D_Form = tk.Frame(Center, bg='pink')
-D_Form.place(relx=0.61,rely=0.4,relwidth=0.35,relheight=0.2)
+D_Name_Fr = tk.Frame(Center, bg="pink")
+D_Name_Fr.place(relx=0.57,rely=0.3,relwidth=0.35,relheight=0.08)
+
+E_K_Disp = tk.Frame(Center, bg='red')
+E_K_Disp.place(relx=0.1,rely=0.4,relwidth=0.172,relheight=0.08)
+
+E_M_Disp = tk.Frame(Center, bg='red')
+E_M_Disp.place(relx=0.1,rely=0.5,relwidth=0.172,relheight=0.08)
+
+E_K_Inp = tk.Frame(Center, bg='red')
+E_K_Inp.place(relx=0.275,rely=0.4,relwidth=0.172,relheight=0.08)
+
+E_M_Inp = tk.Frame(Center, bg='red')
+E_M_Inp.place(relx=0.275,rely=0.5,relwidth=0.172,relheight=0.08)
+
+D_K_Disp = tk.Frame(Center, bg='red')
+D_K_Disp.place(relx=0.57,rely=0.4,relwidth=0.172,relheight=0.08)
+
+D_M_Disp = tk.Frame(Center, bg='red')
+D_M_Disp.place(relx=0.57,rely=0.5,relwidth=0.172,relheight=0.08)
+
+D_K_Inp = tk.Frame(Center, bg='red')
+D_K_Inp.place(relx=0.745,rely=0.4,relwidth=0.172,relheight=0.08)
+
+D_M_Inp = tk.Frame(Center, bg='red')
+D_M_Inp.place(relx=0.745,rely=0.5,relwidth=0.172,relheight=0.08)
+
+E_Submit_Fr = tk.Frame(Center, bg= 'red')
+E_Submit_Fr.place(relx=0.1,rely=0.6,relwidth=0.35,relheight=0.08)
+D_Submit_Fr = tk.Frame(Center, bg = 'red')
+D_Submit_Fr.place(relx=0.57,rely=0.6,relwidth=0.35,relheight=0.08)
 
 E_Result = tk.Frame(Center, bg='pink')
-E_Result.place(relx=0.1, rely=0.62, relwidth=0.35, relheight=0.2)
+E_Result.place(relx=0.1, rely=0.7, relwidth=0.35, relheight=0.2)
 
 D_Result = tk.Frame(Center, bg='pink')
-D_Result.place(relx=0.61, rely=0.62, relwidth=0.35, relheight=0.2)
+D_Result.place(relx=0.57, rely=0.7, relwidth=0.35, relheight=0.2)
 
 #creation of the algorithm selection buttons
-Caesarb = tk.Button(Center,text="Caesar Cipher", bd=5, padx=120, pady=10, command=Choice_Caesar)
+Caesarb = tk.Button(Center,text="Caesar Cipher", activebackground='#ff687e', bg='#943b6d', relief ='ridge',bd=5, padx=120, pady=10, command=Choice_Caesar)
 Caesarb.place(relx=0.01, rely=0.01)
 
-PFair = tk.Button(Center,text="Playfair Cipher", bd=5, padx=120, pady=10, command=Choice_PlayFair)
+PFair = tk.Button(Center,text="Playfair Cipher", bg='#CC6686', bd=5, padx=120, pady=10, command=Choice_PlayFair)
 PFair.place(relx=0.37, rely=0.01)
 
-DES = tk.Button(Center,text="Data Encription Standard", bd=5, padx=90, pady=10, command=Choice_DES)
+DES = tk.Button(Center,text="Data Encription Standard", bg='#CC6686', bd=5, padx=90, pady=10, command=Choice_DES)
 DES.place(relx=0.725, rely=0.01)
 
 gui.mainloop()
