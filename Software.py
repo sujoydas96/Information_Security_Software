@@ -1,7 +1,6 @@
 import tkinter as tk
 from pydes import des
 
-
 class Caesar:
     def __init__(self):
         self.cipher = ""
@@ -382,10 +381,10 @@ def Choice_PlayFair():
     status.pack(side='top')
     
     Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (PlayFair Cipher)')
-    Encryption_Head.pack(side='left')
+    Encryption_Head.pack(side='top')
 
     Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Playfair Cipher)')
-    Decription_Head.pack(side='left')
+    Decription_Head.pack(side='top')
 
     E_Key = tk.Label(E_K_Disp, text='Enter the key')
     E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
@@ -476,10 +475,10 @@ def Choice_DES():
     status.pack(side='top')
     
     Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (Data Encryption Standard)')
-    Encryption_Head.pack(side='left')
+    Encryption_Head.pack(side='top')
 
     Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Data Encryption Standard)')
-    Decription_Head.pack(side='left')
+    Decription_Head.pack(side='top')
 
     E_Key = tk.Label(E_K_Disp, text='Enter the key(8 letter keys)')
     E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
@@ -569,5 +568,8 @@ PFair.place(relx=0.37, rely=0.01)
 
 DES = tk.Button(Center,text="Data Encription Standard", bg='#CC6686', bd=5, padx=90, pady=10, command=Choice_DES)
 DES.place(relx=0.725, rely=0.01)
+
+main_menu = tk.Menu(gui)
+gui.config(menu=main_menu)
 
 gui.mainloop()
