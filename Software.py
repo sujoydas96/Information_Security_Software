@@ -512,64 +512,70 @@ gui.geometry("1400x660")
 
 #creating all frames
 
-Center = tk.Frame(gui, bg="white")
-Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)
+M_BG = tk.PhotoImage(file = "whitemarble.png")           #Background Image for GUI Frame
+background_lab = tk.Label(gui, image=M_BG)
+background_lab.place(x=0, y=0, relwidth=1, relheight=1)
 
-Selected = tk.Frame(Center, bg="pink")
+Center = tk.Frame(gui)
+Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)        #photo-of-green-linear-leaved-plants-1224158
+
+F_BG = tk.PhotoImage(file = "leaf.png")           #Background Image for Center Frame
+background_label = tk.Label(Center, image=F_BG)
+background_label.place(x=0, y=0, relwidth=1, relheight=1)
+
+Selected = tk.Frame(Center)
 Selected.place(relx=0.352,rely=0.14,relwidth=0.3,relheight=0.08)
 
-E_Name_Fr = tk.Frame(Center, bg="pink")     
+E_Name_Fr = tk.Frame(Center)     
 E_Name_Fr.place(relx=0.1,rely=0.3,relwidth=0.35,relheight=0.08)
 
-D_Name_Fr = tk.Frame(Center, bg="pink")
+D_Name_Fr = tk.Frame(Center)
 D_Name_Fr.place(relx=0.57,rely=0.3,relwidth=0.35,relheight=0.08)
 
-E_K_Disp = tk.Frame(Center, bg='red')
+E_K_Disp = tk.Frame(Center)
 E_K_Disp.place(relx=0.1,rely=0.4,relwidth=0.172,relheight=0.08)
 
-E_M_Disp = tk.Frame(Center, bg='red')
+E_M_Disp = tk.Frame(Center)
 E_M_Disp.place(relx=0.1,rely=0.5,relwidth=0.172,relheight=0.08)
 
-E_K_Inp = tk.Frame(Center, bg='red')
+E_K_Inp = tk.Frame(Center)
 E_K_Inp.place(relx=0.275,rely=0.4,relwidth=0.172,relheight=0.08)
 
-E_M_Inp = tk.Frame(Center, bg='red')
+E_M_Inp = tk.Frame(Center)
 E_M_Inp.place(relx=0.275,rely=0.5,relwidth=0.172,relheight=0.08)
 
-D_K_Disp = tk.Frame(Center, bg='red')
+D_K_Disp = tk.Frame(Center)
 D_K_Disp.place(relx=0.57,rely=0.4,relwidth=0.172,relheight=0.08)
 
-D_M_Disp = tk.Frame(Center, bg='red')
+D_M_Disp = tk.Frame(Center)
 D_M_Disp.place(relx=0.57,rely=0.5,relwidth=0.172,relheight=0.08)
 
-D_K_Inp = tk.Frame(Center, bg='red')
+D_K_Inp = tk.Frame(Center)
 D_K_Inp.place(relx=0.745,rely=0.4,relwidth=0.172,relheight=0.08)
 
-D_M_Inp = tk.Frame(Center, bg='red')
+D_M_Inp = tk.Frame(Center)
 D_M_Inp.place(relx=0.745,rely=0.5,relwidth=0.172,relheight=0.08)
 
-E_Submit_Fr = tk.Frame(Center, bg= 'red')
+E_Submit_Fr = tk.Frame(Center)
 E_Submit_Fr.place(relx=0.1,rely=0.6,relwidth=0.35,relheight=0.08)
-D_Submit_Fr = tk.Frame(Center, bg = 'red')
+
+D_Submit_Fr = tk.Frame(Center)
 D_Submit_Fr.place(relx=0.57,rely=0.6,relwidth=0.35,relheight=0.08)
 
-E_Result = tk.Frame(Center, bg='pink')
+E_Result = tk.Frame(Center)
 E_Result.place(relx=0.1, rely=0.7, relwidth=0.35, relheight=0.2)
 
-D_Result = tk.Frame(Center, bg='pink')
+D_Result = tk.Frame(Center)
 D_Result.place(relx=0.57, rely=0.7, relwidth=0.35, relheight=0.2)
 
 #creation of the algorithm selection buttons
-Caesarb = tk.Button(Center,text="Caesar Cipher", activebackground='#ff687e', bg='#943b6d', relief ='ridge',bd=5, padx=120, pady=10, command=Choice_Caesar)
+Caesarb = tk.Button(Center,text="Caesar Cipher", activebackground='#ff687e', bg='#3a5044',bd=5, padx=120, pady=10, command=Choice_Caesar)
 Caesarb.place(relx=0.01, rely=0.01)
 
-PFair = tk.Button(Center,text="Playfair Cipher", bg='#CC6686', bd=5, padx=120, pady=10, command=Choice_PlayFair)
+PFair = tk.Button(Center,text="Playfair Cipher", bg='#3a5044', bd=5, padx=120, pady=10, command=Choice_PlayFair)
 PFair.place(relx=0.37, rely=0.01)
 
-DES = tk.Button(Center,text="Data Encription Standard", bg='#CC6686', bd=5, padx=90, pady=10, command=Choice_DES)
+DES = tk.Button(Center,text="Data Encription Standard", bg='#3a5044', bd=5, padx=90, pady=10, command=Choice_DES)
 DES.place(relx=0.725, rely=0.01)
-
-main_menu = tk.Menu(gui)
-gui.config(menu=main_menu)
 
 gui.mainloop()
