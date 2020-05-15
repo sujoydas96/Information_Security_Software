@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import font
 from pydes import des
 
 class Caesar:
@@ -228,12 +229,12 @@ def CaesarED(num,mess,key):
     if num == 1:
         cipher = instance.encrypt(mess,key)
         cipher = 'The Calculated Cipher is : ' + cipher
-        Result = tk.Label(E_Result,text=cipher)
+        Result = tk.Label(E_Result, font=A_Trans, text=cipher, bg="#d8d2d6")
         Result.pack(side='top')
     if num == 2:
         message = instance.decrypt(mess,key)
         message = 'The Calculated Message is : '+ message
-        dResult = tk.Label(D_Result,text=message)
+        dResult = tk.Label(D_Result, font=A_Trans, text=message, bg="#d8d2d6")
         dResult.pack(side='top')
 
 def Choice_Caesar():
@@ -283,38 +284,38 @@ def Choice_Caesar():
     for widget in D_Result.winfo_children():
         widget.destroy()
 
-    status = tk.Label(Selected, text='The Selected Algorithm is : Caesar Cipher')
+    status = tk.Label(Selected, font = A_Trans, text='The Selected Algorithm is : Caesar Cipher', bg="#d8d2d6")
     status.pack(side='top')
     
-    Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (Caesar Cipher)')
+    Encryption_Head = tk.Label(E_Name_Fr, font = A_Trans, text='Encrypt Message (Caesar Cipher)', bg="#d8d2d6")
     Encryption_Head.pack(side='top')
 
-    Decription_Head = tk.Label(D_Name_Fr,text='Decrypt Message (Caesar Cipher)')
+    Decription_Head = tk.Label(D_Name_Fr, font = A_Trans, text='Decrypt Message (Caesar Cipher)', bg="#d8d2d6")
     Decription_Head.pack(side='top')
 
-    E_Key = tk.Label(E_K_Disp, text='Enter the key/displacement')
-    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
-    Inp_Key = tk.Entry(E_K_Inp)
-    Inp_Message = tk.Entry(E_M_Inp)
+    E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key/displacement', bg="#d8d2d6")
+    E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
+    Inp_Key = tk.Entry(E_K_Inp, font=A_Trans)
+    Inp_Message = tk.Entry(E_M_Inp, font=A_Trans)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
     Inp_Key.pack(side='left')
     Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_K_Disp, text='Enter the key/displacement')
-    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_K_Inp)
-    D_InpMessage = tk.Entry(D_M_Inp)
+    D_Key = tk.Label(D_K_Disp, font=A_Trans, text='Enter the key/displacement', bg="#d8d2d6")
+    D_Mess = tk.Label(D_M_Disp, font=A_Trans, text='Enter the Cipher', bg="#d8d2d6")
+    D_InpKey = tk.Entry(D_K_Inp, font=A_Trans)
+    D_InpMessage = tk.Entry(D_M_Inp, font=A_Trans)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
     D_InpKey.pack(side='left')
     D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: CaesarED(1,Inp_Message.get(),int(Inp_Key.get())))
+    E_Submit = tk.Button(E_Submit_Fr, font=A_Trans, bg='#c5975e', activebackground='#e0ae6c', text='Submit',padx=150,pady=15,command= lambda: CaesarED(1,Inp_Message.get(),int(Inp_Key.get())))
     E_Submit.pack(side='top')
-    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: CaesarED(2,D_InpMessage.get(),int(D_InpKey.get())))
+    D_Submit = tk.Button(D_Submit_Fr, font=A_Trans, bg='#c5975e', activebackground='#e0ae6c', text='Submit',padx=150,pady=15,command= lambda: CaesarED(2,D_InpMessage.get(),int(D_InpKey.get())))
     D_Submit.pack(side='top')
 
 def PlayFairED(num,mess,key):
@@ -322,12 +323,12 @@ def PlayFairED(num,mess,key):
     if num == 1:
         cipher = pf.encrypt(mess)
         cipher = 'The Calculated Cipher is : ' + cipher
-        Result = tk.Label(E_Result,text=cipher)
+        Result = tk.Label(E_Result, font = A_Trans, text=cipher, bg="#d8d2d6")
         Result.pack(side='top')
     if num == 2:
         message = pf.decrypt(mess)
         message = 'The Calculated Message is : '+ message
-        dResult = tk.Label(D_Result,text=message)
+        dResult = tk.Label(D_Result, font = A_Trans, text=message, bg="#d8d2d6")
         dResult.pack(side='top')
 
 def Choice_PlayFair():
@@ -377,38 +378,38 @@ def Choice_PlayFair():
     for widget in D_Result.winfo_children():
         widget.destroy()
 
-    status = tk.Label(Selected, text='The Selected Algorithm is : PlayFair Cipher')
+    status = tk.Label(Selected, font = A_Trans, text='The Selected Algorithm is : PlayFair Cipher', bg="#d8d2d6")
     status.pack(side='top')
     
-    Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (PlayFair Cipher)')
+    Encryption_Head = tk.Label(E_Name_Fr, font = A_Trans, text='Encrypt Message (PlayFair Cipher)', bg="#d8d2d6")
     Encryption_Head.pack(side='top')
 
-    Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Playfair Cipher)')
+    Decription_Head = tk.Label(D_Name_Fr, font = A_Trans, text='Decrypts Message (Playfair Cipher)', bg="#d8d2d6")
     Decription_Head.pack(side='top')
 
-    E_Key = tk.Label(E_K_Disp, text='Enter the key')
-    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
-    Inp_Key = tk.Entry(E_K_Inp)
-    Inp_Message = tk.Entry(E_M_Inp)
+    E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key', bg="#d8d2d6")
+    E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
+    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans)
+    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
     Inp_Key.pack(side='left')
     Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_K_Disp, text='Enter the key')
-    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_K_Inp)
-    D_InpMessage = tk.Entry(D_M_Inp)
+    D_Key = tk.Label(D_K_Disp, font = A_Trans, text='Enter the key', bg="#d8d2d6")
+    D_Mess = tk.Label(D_M_Disp, font = A_Trans, text='Enter the Cipher', bg="#d8d2d6")
+    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans)
+    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
     D_InpKey.pack(side='left')
     D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: PlayFairED(1,Inp_Message.get(),Inp_Key.get()))
+    E_Submit = tk.Button(E_Submit_Fr, font = A_Trans, bg='#c5975e', activebackground='#e0ae6c', text='Submit',padx=150,pady=15,command= lambda: PlayFairED(1,Inp_Message.get(),Inp_Key.get()))
     E_Submit.pack(side='top')
-    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: PlayFairED(2,D_InpMessage.get(),D_InpKey.get()))
+    D_Submit = tk.Button(D_Submit_Fr, font = A_Trans, bg='#c5975e', activebackground='#e0ae6c', text='Submit',padx=150,pady=15,command= lambda: PlayFairED(2,D_InpMessage.get(),D_InpKey.get()))
     D_Submit.pack(side='top')
 
 def DES_ED(num,key,mess):
@@ -416,12 +417,12 @@ def DES_ED(num,key,mess):
     if num == 1:
         cipher = d.encrypt(key,mess,padding=True)
         cipher = 'The Calculated Cipher is : ' + cipher
-        Result = tk.Label(E_Result,text=cipher)
+        Result = tk.Label(E_Result, font = A_Trans, text=cipher, bg="#d8d2d6")
         Result.pack(side='top')
     if num == 2:
         message = d.decrypt(key,mess,padding=True)
         message = 'The Calculated Message is : '+ message
-        dResult = tk.Label(D_Result,text=message)
+        dResult = tk.Label(D_Result, font = A_Trans, text=message, bg="#d8d2d6")
         dResult.pack(side='top')
 
 def Choice_DES():
@@ -471,38 +472,38 @@ def Choice_DES():
     for widget in D_Result.winfo_children():
         widget.destroy()
 
-    status = tk.Label(Selected, text='The Selected Algorithm is : Data Encryption Standard')
+    status = tk.Label(Selected, font = A_Trans, text='The Selected Algorithm is : DES', bg="#d8d2d6")
     status.pack(side='top')
     
-    Encryption_Head = tk.Label(E_Name_Fr,text='Encrypt Message (Data Encryption Standard)')
+    Encryption_Head = tk.Label(E_Name_Fr, font = A_Trans, text='Encrypt Message (Data Encryption Standard)', bg="#d8d2d6")
     Encryption_Head.pack(side='top')
 
-    Decription_Head = tk.Label(D_Name_Fr,text='Decrypts Message (Data Encryption Standard)')
+    Decription_Head = tk.Label(D_Name_Fr, font = A_Trans, text='Decrypts Message (Data Encryption Standard)', bg="#d8d2d6")
     Decription_Head.pack(side='top')
 
-    E_Key = tk.Label(E_K_Disp, text='Enter the key(8 letter keys)')
-    E_Mess = tk.Label(E_M_Disp, text='Enter the Message')
-    Inp_Key = tk.Entry(E_K_Inp)
-    Inp_Message = tk.Entry(E_M_Inp)
+    E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key(8 letter keys)', bg="#d8d2d6")
+    E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
+    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans)
+    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
     Inp_Key.pack(side='left')
     Inp_Message.pack(side='left')
 
-    D_Key = tk.Label(D_K_Disp, text='Enter the key(8 letter keys)')
-    D_Mess = tk.Label(D_M_Disp, text='Enter the Cipher')
-    D_InpKey = tk.Entry(D_K_Inp)
-    D_InpMessage = tk.Entry(D_M_Inp)
+    D_Key = tk.Label(D_K_Disp, font = A_Trans, text='Enter the key(8 letter keys)', bg="#d8d2d6")
+    D_Mess = tk.Label(D_M_Disp, font = A_Trans, text='Enter the Cipher', bg="#d8d2d6")
+    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans)
+    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
     D_InpKey.pack(side='left')
     D_InpMessage.pack(side='left')
 
-    E_Submit = tk.Button(E_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: DES_ED(1,Inp_Key.get(),Inp_Message.get()))
+    E_Submit = tk.Button(E_Submit_Fr, font = A_Trans, activebackground='#e0ae6c', bg='#c5975e', text='Submit',padx=150,pady=15,command= lambda: DES_ED(1,Inp_Key.get(),Inp_Message.get()))
     E_Submit.pack(side='top')
-    D_Submit = tk.Button(D_Submit_Fr,text='Submit',padx=150,pady=15,command= lambda: DES_ED(2,D_InpKey.get(),D_InpMessage.get()))
+    D_Submit = tk.Button(D_Submit_Fr, font = A_Trans, bg='#c5975e', activebackground='#e0ae6c', text='Submit',padx=150,pady=15,command= lambda: DES_ED(2,D_InpKey.get(),D_InpMessage.get()))
     D_Submit.pack(side='top')
 
 gui = tk.Tk()
@@ -510,72 +511,76 @@ gui.iconbitmap(r'favicon.ico')
 gui.title("Information Security Software")
 gui.geometry("1400x660")
 
-#creating all frames
-
 M_BG = tk.PhotoImage(file = "whitemarble.png")           #Background Image for GUI Frame
 background_lab = tk.Label(gui, image=M_BG)
 background_lab.place(x=0, y=0, relwidth=1, relheight=1)
 
-Center = tk.Frame(gui)
-Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)        #photo-of-green-linear-leaved-plants-1224158
+#font operations
+Microsoft_Y = font.Font(family="Microsoft YaHei",size=10, weight='bold')
+A_Trans = font.Font(family="Arabic Transparent", size=12, weight='bold')
+
+#creating all frames
+Center = tk.Frame(gui, bg='#d9d0d5')
+Center.place(relx=0.05,rely=0.05,relwidth=0.9,relheight=0.9)        
 
 F_BG = tk.PhotoImage(file = "leaf.png")           #Background Image for Center Frame
 background_label = tk.Label(Center, image=F_BG)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-Selected = tk.Frame(Center)
+Selected = tk.Frame(Center, bg='white')                                  ####################################################################
 Selected.place(relx=0.352,rely=0.14,relwidth=0.3,relheight=0.08)
 
-E_Name_Fr = tk.Frame(Center)     
+E_Name_Fr = tk.Frame(Center, bg='#d9d0d5')     
 E_Name_Fr.place(relx=0.1,rely=0.3,relwidth=0.35,relheight=0.08)
 
-D_Name_Fr = tk.Frame(Center)
+D_Name_Fr = tk.Frame(Center, bg='#d9d0d5')
 D_Name_Fr.place(relx=0.57,rely=0.3,relwidth=0.35,relheight=0.08)
 
-E_K_Disp = tk.Frame(Center)
+E_K_Disp = tk.Frame(Center, bg='#d9d0d5')
 E_K_Disp.place(relx=0.1,rely=0.4,relwidth=0.172,relheight=0.08)
 
-E_M_Disp = tk.Frame(Center)
+E_M_Disp = tk.Frame(Center, bg='#d9d0d5')
 E_M_Disp.place(relx=0.1,rely=0.5,relwidth=0.172,relheight=0.08)
 
-E_K_Inp = tk.Frame(Center)
+E_K_Inp = tk.Frame(Center, bg='#d9d0d5')
 E_K_Inp.place(relx=0.275,rely=0.4,relwidth=0.172,relheight=0.08)
 
-E_M_Inp = tk.Frame(Center)
+E_M_Inp = tk.Frame(Center, bg='#d9d0d5')
 E_M_Inp.place(relx=0.275,rely=0.5,relwidth=0.172,relheight=0.08)
 
-D_K_Disp = tk.Frame(Center)
+D_K_Disp = tk.Frame(Center, bg='#d9d0d5')
 D_K_Disp.place(relx=0.57,rely=0.4,relwidth=0.172,relheight=0.08)
 
-D_M_Disp = tk.Frame(Center)
+D_M_Disp = tk.Frame(Center, bg='#d9d0d5')
 D_M_Disp.place(relx=0.57,rely=0.5,relwidth=0.172,relheight=0.08)
 
-D_K_Inp = tk.Frame(Center)
+D_K_Inp = tk.Frame(Center, bg='#d9d0d5')
 D_K_Inp.place(relx=0.745,rely=0.4,relwidth=0.172,relheight=0.08)
 
-D_M_Inp = tk.Frame(Center)
+D_M_Inp = tk.Frame(Center, bg='#d9d0d5')
 D_M_Inp.place(relx=0.745,rely=0.5,relwidth=0.172,relheight=0.08)
 
-E_Submit_Fr = tk.Frame(Center)
+E_Submit_Fr = tk.Frame(Center, bg='#d9d0d5')
 E_Submit_Fr.place(relx=0.1,rely=0.6,relwidth=0.35,relheight=0.08)
 
-D_Submit_Fr = tk.Frame(Center)
+D_Submit_Fr = tk.Frame(Center, bg='#d9d0d5')
 D_Submit_Fr.place(relx=0.57,rely=0.6,relwidth=0.35,relheight=0.08)
 
-E_Result = tk.Frame(Center)
+E_Result = tk.Frame(Center, bg='#d9d0d5')
 E_Result.place(relx=0.1, rely=0.7, relwidth=0.35, relheight=0.2)
 
-D_Result = tk.Frame(Center)
+D_Result = tk.Frame(Center, bg='#d9d0d5')
 D_Result.place(relx=0.57, rely=0.7, relwidth=0.35, relheight=0.2)
 
 #creation of the algorithm selection buttons
-Caesarb = tk.Button(Center,text="Caesar Cipher", activebackground='#ff687e', bg='#3a5044',bd=5, padx=120, pady=10, command=Choice_Caesar)
+
+Caesarb = tk.Button(Center,text="Caesar Cipher", font=Microsoft_Y, fg = '#d9d0d5', activebackground='#608673', bg='#3a5044',bd=5, padx=120, pady=10, command=Choice_Caesar)
 Caesarb.place(relx=0.01, rely=0.01)
 
-PFair = tk.Button(Center,text="Playfair Cipher", bg='#3a5044', bd=5, padx=120, pady=10, command=Choice_PlayFair)
+PFair = tk.Button(Center,text="Playfair Cipher", font=Microsoft_Y, fg = '#d9d0d5', activebackground='#608673', bg='#3a5044', bd=5, padx=120, pady=10, command=Choice_PlayFair)
 PFair.place(relx=0.37, rely=0.01)
 
-DES = tk.Button(Center,text="Data Encription Standard", bg='#3a5044', bd=5, padx=90, pady=10, command=Choice_DES)
+DES = tk.Button(Center,text="Data Encription Standard", font=Microsoft_Y, fg = '#d9d0d5', activebackground='#608673', bg='#3a5044', bd=5, padx=90, pady=10, command=Choice_DES)
 DES.place(relx=0.725, rely=0.01)
 
 gui.mainloop()
