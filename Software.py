@@ -295,8 +295,8 @@ def Choice_Caesar():
 
     E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key/displacement', bg="#d8d2d6")
     E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
-    Inp_Key = tk.Entry(E_K_Inp, font=A_Trans)
-    Inp_Message = tk.Entry(E_M_Inp, font=A_Trans)
+    Inp_Key = tk.Entry(E_K_Inp, font=A_Trans, width=22)
+    Inp_Message = tk.Entry(E_M_Inp, font=A_Trans, width=22)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
@@ -305,8 +305,8 @@ def Choice_Caesar():
 
     D_Key = tk.Label(D_K_Disp, font=A_Trans, text='Enter the key/displacement', bg="#d8d2d6")
     D_Mess = tk.Label(D_M_Disp, font=A_Trans, text='Enter the Cipher', bg="#d8d2d6")
-    D_InpKey = tk.Entry(D_K_Inp, font=A_Trans)
-    D_InpMessage = tk.Entry(D_M_Inp, font=A_Trans)
+    D_InpKey = tk.Entry(D_K_Inp, font=A_Trans, width=22)
+    D_InpMessage = tk.Entry(D_M_Inp, font=A_Trans, width=22)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
@@ -389,8 +389,8 @@ def Choice_PlayFair():
 
     E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key', bg="#d8d2d6")
     E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
-    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans)
-    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans)
+    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans, width=22)
+    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans, width=22)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
@@ -399,8 +399,8 @@ def Choice_PlayFair():
 
     D_Key = tk.Label(D_K_Disp, font = A_Trans, text='Enter the key', bg="#d8d2d6")
     D_Mess = tk.Label(D_M_Disp, font = A_Trans, text='Enter the Cipher', bg="#d8d2d6")
-    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans)
-    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans)
+    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans, width=22)
+    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans, width=22)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
@@ -483,8 +483,8 @@ def Choice_DES():
 
     E_Key = tk.Label(E_K_Disp, font = A_Trans, text='Enter the key(8 letter keys)', bg="#d8d2d6")
     E_Mess = tk.Label(E_M_Disp, font = A_Trans, text='Enter the Message', bg="#d8d2d6")
-    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans)
-    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans)
+    Inp_Key = tk.Entry(E_K_Inp, font = A_Trans, width=22)
+    Inp_Message = tk.Entry(E_M_Inp, font = A_Trans, width=22)
 
     E_Key.pack(side='right')
     E_Mess.pack(side='right')
@@ -493,8 +493,8 @@ def Choice_DES():
 
     D_Key = tk.Label(D_K_Disp, font = A_Trans, text='Enter the key(8 letter keys)', bg="#d8d2d6")
     D_Mess = tk.Label(D_M_Disp, font = A_Trans, text='Enter the Cipher', bg="#d8d2d6")
-    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans)
-    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans)
+    D_InpKey = tk.Entry(D_K_Inp, font = A_Trans, width=22)
+    D_InpMessage = tk.Entry(D_M_Inp, font = A_Trans, width=22)
 
     D_Key.pack(side='right')
     D_Mess.pack(side='right')
@@ -518,6 +518,7 @@ background_lab.place(x=0, y=0, relwidth=1, relheight=1)
 #font operations
 Microsoft_Y = font.Font(family="Microsoft YaHei",size=10, weight='bold')
 A_Trans = font.Font(family="Arabic Transparent", size=12, weight='bold')
+A_Black = font.Font(family="Arabic Black", size=7, weight='bold')
 
 #creating all frames
 Center = tk.Frame(gui, bg='#d9d0d5')
@@ -527,7 +528,7 @@ F_BG = tk.PhotoImage(file = "leaf.png")           #Background Image for Center F
 background_label = tk.Label(Center, image=F_BG)
 background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-Selected = tk.Frame(Center, bg='white')                                  ####################################################################
+Selected = tk.Frame(Center, bg='#d9d0d5')                                  ####################################################################
 Selected.place(relx=0.352,rely=0.14,relwidth=0.3,relheight=0.08)
 
 E_Name_Fr = tk.Frame(Center, bg='#d9d0d5')     
@@ -578,9 +579,12 @@ Caesarb = tk.Button(Center,text="Caesar Cipher", font=Microsoft_Y, fg = '#d9d0d5
 Caesarb.place(relx=0.01, rely=0.01)
 
 PFair = tk.Button(Center,text="Playfair Cipher", font=Microsoft_Y, fg = '#d9d0d5', activebackground='#608673', bg='#3a5044', bd=5, padx=120, pady=10, command=Choice_PlayFair)
-PFair.place(relx=0.37, rely=0.01)
+PFair.place(relx=0.36, rely=0.01)
 
 DES = tk.Button(Center,text="Data Encription Standard", font=Microsoft_Y, fg = '#d9d0d5', activebackground='#608673', bg='#3a5044', bd=5, padx=90, pady=10, command=Choice_DES)
-DES.place(relx=0.725, rely=0.01)
+DES.place(relx=0.705, rely=0.01)
+
+Boiler_plate = tk.Label(gui,font= A_Black, text="Developed by Sujoy Das\nGithub: sujoydas96", bg="#d8d2d6")
+Boiler_plate.place(relx=0.465, rely=0.95)
 
 gui.mainloop()
